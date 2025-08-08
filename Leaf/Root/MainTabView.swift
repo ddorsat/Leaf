@@ -46,7 +46,7 @@ struct MainTabView: View {
     }
 }
 
-enum Tabs: String {
+fileprivate enum Tabs: String {
     case main = "Главная"
     case history = "История"
     case cards = "Карты"

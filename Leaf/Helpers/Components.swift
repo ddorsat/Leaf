@@ -61,7 +61,7 @@ struct ButtonComponents {
     }
 }
 
-public func historyOperation(title: String, count: String, color: Color) -> some View {
+internal func historyOperation(title: String, count: String, color: Color) -> some View {
     HStack(spacing: 5) {
         Text(title)
         
@@ -77,7 +77,7 @@ public func historyOperation(title: String, count: String, color: Color) -> some
     .clipShape(RoundedRectangle(cornerRadius: 20))
 }
 
-public func cardInformation(balance: String,
+internal func cardInformation(balance: String,
                             proMaxPadding: CGFloat,
                             proPadding: CGFloat) -> some View {
     VStack(spacing: 10) {
@@ -92,7 +92,7 @@ public func cardInformation(balance: String,
     }
 }
 
-public func backgroundGradient(colors: [Color], isSheet: Bool) -> some View {
+internal func backgroundGradient(colors: [Color], isSheet: Bool) -> some View {
     LinearGradient(colors: colors, startPoint: .topLeading, endPoint: .bottom)
         .ignoresSafeArea()
         .frame(height: UIScreen.main.bounds.height / 2)
@@ -100,14 +100,14 @@ public func backgroundGradient(colors: [Color], isSheet: Bool) -> some View {
         .safeAreaInset(edge: .bottom) { isSheet ? Color.clear.frame(height: UIDevice.isProMax ? 460 : 430) : Color.clear.frame(height: UIDevice.isProMax ? 500 : 470)}
 }
 
-public func emptyView(title: String, padding: Bool) -> some View {
+internal func emptyView(title: String, padding: Bool) -> some View {
     Text(title)
         .font(.title2)
         .fontWeight(.medium)
         .padding(.top, padding ? 140 : 0)
 }
 
-func transactionsView(viewModel: any TransactionsProtocol,
+internal func transactionsView(viewModel: any TransactionsProtocol,
                       completion: @escaping (CardTransaction) -> Void) -> some View {
     ForEach(Array(viewModel.transactions.enumerated()), id: \.1) { index, transaction in
         let shouldShowDate = viewModel.transactions
