@@ -4,7 +4,7 @@
 | Язык                    | Swift                                                |
 | Фреймворки              | SwiftUI, UIKit                                       |
 | Архитектура             | MVVM                                                 |
-| Принципы проектирования | SOLID, DRY                                           |
+| Принципы проектирования | SOLID, DRY, SSOT, YAGNI                              |
 | Локальная база данных   | Core Data                                            |
 | Асинхронность           | async/await, Combine, GCD                            |
 | Тестирование            | Unit, UI тесты (XCTest)                              |
